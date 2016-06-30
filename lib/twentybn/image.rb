@@ -2,9 +2,15 @@ require 'faraday'
 require 'json'
 require 'base64'
 
-API_URL = "https://app.twentybn.com"
-
 module TwentyBN
+
+  def self.api_key=(api_key)
+    config[:api_key] = api_key.to_s
+  end
+
+  def self.image(image)
+    Image.new(image)
+  end
 
   class Image
 
@@ -15,8 +21,8 @@ module TwentyBN
     def ask(question)
       response = api_connection.post do |reqest|
         reqest.headers['Content-Type'] = 'application/json'
-        reqest.headers['api_key'] = "1234"
         data = {
+          api_key: TwentyBN.config[:api_key],
           image: self.image_base64,
           question: question,
         }
@@ -31,7 +37,7 @@ module TwentyBN
     end
 
     def api_connection
-      @api_connection ||= Faraday.new(url: API_URL) do |faraday|
+      @api_connection ||= Faraday.new(url: TwentyBN.config[:api_url]) do |faraday|
         faraday.request  :url_encoded
         faraday.response :logger
         faraday.adapter Faraday.default_adapter
