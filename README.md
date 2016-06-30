@@ -21,7 +21,9 @@ To get access to the twentybn vision api:
 ```ruby
 require 'twentybn'
 
-answer = TwentyBN::Image.new("/path/to/an/image.jpg").ask("What is the man doing?")
+TwentyBN.api_key = 'PUT KEY HERE'
+
+answer = TwentyBN.image("/path/to/an/image.jpg").ask("What is the man doing?")
 
 # e.g. "throwing a frisbee"
 ```
