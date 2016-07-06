@@ -19,15 +19,30 @@ module TwentyBN
     end
 
     def ask(question)
-      response = api_connection.post do |reqest|
-        reqest.headers['Content-Type'] = 'application/json'
+      response = api_connection.post do |request|
+        request.headers['Content-Type'] = 'application/json'
+        request.headers['X-ApiKey'] = TwentyBN.config[:api_key]
         data = {
-          api_key: TwentyBN.config[:api_key],
-          image: self.image_base64,
+          url: '',
+          content: self.image_base64,
           question: question,
         }
-        reqest.url '/v1/image.json'
-        reqest.body = JSON.generate(data)
+        request.url '/v1/vqa'
+        request.body = JSON.generate(data)
+      end
+      return response.body
+    end
+
+    def tag
+      response = api_connection.post do |request|
+        request.headers['Content-Type'] = 'application/json'
+        request.headers['X-ApiKey'] = TwentyBN.config[:api_key]
+        data = {
+          url: '',
+          content: self.image_base64,
+        }
+        request.url '/v1/tag_image'
+        request.body = JSON.generate(data)
       end
       return response.body
     end
