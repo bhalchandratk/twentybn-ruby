@@ -23,7 +23,6 @@ module TwentyBN
         request.headers['Content-Type'] = 'application/json'
         request.headers['X-ApiKey'] = TwentyBN.config[:api_key]
         data = {
-          url: '',
           content: self.image_base64,
           question: question,
         }
@@ -38,7 +37,6 @@ module TwentyBN
         request.headers['Content-Type'] = 'application/json'
         request.headers['X-ApiKey'] = TwentyBN.config[:api_key]
         data = {
-          url: '',
           content: self.image_base64,
         }
         request.url '/v1/tag_image'
