@@ -6,5 +6,5 @@ module TwentyBN
 end
 
 TwentyBN.config = {
-  api_url: "https://app.twentybn.com"
+  api_url: "https://cortex.twentybn.com"
 }
