@@ -7,6 +7,9 @@ tag_places_result:
 tag_categories_result:
   scores: [0.9337393641471863, 0.06410387858122135, 0.001825189208602751, 0.00018991139130974943, 5.102681438984291e-05]
   tags: ["foxhound", "hound, hound dog", "spaniel", "Sennenhunde", "pointer, Spanish pointer"]
+tag_custom_result:
+  scores: [0.6947551130672773, 0.3052448869327226]
+  tags: ["cat", "dog"]
 ask_result:
   answers: ["SLEEPING", "SITTING", "LAYING DOWN", "PLAYING", "READING"]
   scores: [9.935430526733398, 7.352405071258545, 7.222123146057129, 7.210022926330566, 6.92863655090332]

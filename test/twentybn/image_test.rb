@@ -43,6 +43,18 @@ class ImageTest < Minitest::Test
     end
   end
 
+  def test_tag_with_custom_classifier
+    VCR.use_cassette('tag_custom') do
+
+      response = TwentyBN.image("./test/fixtures/files/test_image.jpg").tag("9b80ddb9-2d02-436f-86ba-f9a3e679de7a")
+      result = JSON.parse(response)['result']
+
+      tag_result_fixture = YAML.load_file('./test/fixtures/results.yml')['tag_custom_result']
+
+      assert_equal result['scores'], tag_result_fixture['scores']
+      assert_equal result['tags'], tag_result_fixture['tags']
+    end
+  end
 
   def test_ask
     VCR.use_cassette('ask') do
@@ -57,6 +69,4 @@ class ImageTest < Minitest::Test
       assert_equal result['answers'], ask_result_fixture['answers']
     end
   end
-
-
 end
