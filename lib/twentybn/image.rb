@@ -39,8 +39,14 @@ module TwentyBN
         data = {
           content: self.image_base64,
         }
-        request.url "/v1/tag_image"
-        request.params['model'] = model
+        default_models = [:objects, :places, :categories]
+        if default_models.include? model
+          request.url "/v1/tag_image"
+          request.params['model'] = model
+        else
+          request.url '/v1/custom_tag_image'
+          data[:modelId] = model
+        end
         request.body = JSON.generate(data)
       end
       return response.body
