@@ -2,7 +2,7 @@ require './test/test_helper'
 
 class ImageTest < Minitest::Test
 
-  TwentyBN.api_key = 'IkzFnPpiyJ7mRCjTB8HHZQ8PjMYHi9K9'
+  TwentyBN.api_key = 'YOUR_API_KEY'
 
   def test_tag_with_objects
     VCR.use_cassette('tag_objects') do
