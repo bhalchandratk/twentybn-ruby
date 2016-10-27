@@ -1,0 +1,12 @@
+tag_objects_result:
+  scores: [0.705970287322998, 0.22776907682418823, 0.05966024845838547, 0.0038669295608997345, 0.0018167371163144708]
+  tags: ["English foxhound", "Walker hound, Walker foxhound", "beagle", "bluetick", "Brittany spaniel"]
+tag_places_result:
+  scores: [0.2170010805130005, 0.14935103058815002, 0.08239652961492538, 0.06759288907051086, 0.06492573022842407]
+  tags: ["gift_shop", "clothing_store", "nursery", "art_gallery", "museum, indoor"]
+tag_categories_result:
+  scores: [0.9337393641471863, 0.06410387858122135, 0.001825189208602751, 0.00018991139130974943, 5.102681438984291e-05]
+  tags: ["foxhound", "hound, hound dog", "spaniel", "Sennenhunde", "pointer, Spanish pointer"]
+ask_result:
+  answers: ["SLEEPING", "SITTING", "LAYING DOWN", "PLAYING", "READING"]
+  scores: [9.935430526733398, 7.352405071258545, 7.222123146057129, 7.210022926330566, 6.92863655090332]
