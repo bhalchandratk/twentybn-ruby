@@ -8,11 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = TwentyBN::VERSION
   spec.authors       = ["Ingo Bax"]
   spec.email         = ["ingo.bax@twentybn.com"]
-  spec.summary       = %q{Gem to wrap the twentybn deep learning api}
-  spec.description   = %q{Gem to wrap the twentybn deep learning api}
+  spec.summary       = %q{Gem to access the twentybn.com deep learning api}
+  spec.description   = %q{Gem to access the twentybn.com deep learning api, which offers functions like image e.g. tagging, machine translation and sentiment analysis.}
   spec.homepage      = "https://www.twentybn.com"
   spec.license       = "MIT"
-
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})

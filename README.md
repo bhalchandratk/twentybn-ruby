@@ -1,5 +1,7 @@
 # TwentyBN
 
+This gem implements a client for the TwentyBN deep learning API for Ruby or Ruby on Rails. This is a beta version and currently only offers access to the TwentyBN image tagging API, which can be used to recognizing objects in images.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -14,20 +16,25 @@ Or install it yourself as:
 
     $ gem install twentybn
 
-## Usage
+## API key
 
-To get access to the twentybn vision api:
+In order to get an API key, you need to sign up for free at https://cortex.twentybn.com.
+
+## Basic usage
 
 ```ruby
 require 'twentybn'
-
 TwentyBN.api_key = 'PUT_API_KEY_HERE'
-
 tags = TwentyBN.image("/path/to/an/image.jpg").tag
-
 answer = TwentyBN.image("/path/to/an/image.jpg").ask("What is the man doing?")
+```
 
-# e.g. "throwing a frisbee"
+## Configure Rails application
+
+If you use Rails, you can add omit the first two lines and add the API key to your environment config file as follows:
+
+```ruby
+config.twentybn_api_key = 'PUT_API_KEY_HERE'
 ```
 
 ## License
