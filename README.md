@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/TwentyBN/twentybn-ruby/badges/gpa.svg)](https://codeclimate.com/github/TwentyBN/twentybn-ruby)
+
 # TwentyBN
 
 This gem implements a client for the TwentyBN deep learning API for Ruby or Ruby on Rails. This is a beta version and currently only offers access to the TwentyBN image tagging API, which can be used to recognizing objects in images.
