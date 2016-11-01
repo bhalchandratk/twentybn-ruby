@@ -1,5 +1,4 @@
 module TwentyBN
-  private
   class << self
     attr_accessor :config
   end
