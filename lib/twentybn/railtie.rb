@@ -1,11 +1,12 @@
 module TwentyBN
-  class Railtie < Rails::Railtie
-    require 'rails'
 
+  require 'rails'
+
+  class Railtie < Rails::Railtie
     initializer 'twentybn' do |app|
-      TwentyBN.api_key = app.config.twentybn_api_key
+      api_key = app.config.respond_to?(:twentybn_api_key) ? app.config.twentybn_api_key : ""
+      TwentyBN.api_key = api_key
     end
   end
-end
 
-require 'twentybn/railtie' if defined?(Rails)
+end
