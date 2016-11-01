@@ -29,7 +29,7 @@ module TwentyBN
         request.url '/v1/vqa'
         request.body = JSON.generate(data)
       end
-      return response.body
+      return JSON.parse(response.body)
     end
 
     def tag(model=:objects)
@@ -49,7 +49,7 @@ module TwentyBN
         end
         request.body = JSON.generate(data)
       end
-      return response.body
+      return JSON.parse(response.body)
     end
 
     def image_base64
