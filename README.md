@@ -60,7 +60,7 @@ The default image classifier knows one thousand objects and returns the top 5 mo
 
 ### Configure Rails application
 
-If you use Rails, you can add omit the first two lines and add the API key to your environment config file as follows:
+If you use Rails, you can add the API key to your environment config file as follows:
 
 ```ruby
 config.twentybn_api_key = 'PUT_API_KEY_HERE'
